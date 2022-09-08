@@ -10,6 +10,9 @@ Details:
 Click on any of the *Plant* to move it to the basket and if you didn't like the plant or you choose to select another plant click the plant that is inside the basket and it will be moved back to its original place — All will happen with beautiful and eye-catching animation. I set the basket UI limit to be able to hold four to five (depends on image size) plants, it can take more ...but then the basket UI would look broken, the plants are going to move outside the basket — Just clarifying, *It is on purpose*. I've used the word *click* but that doesn't mean you can't touch/tap the plant, if you're using touch screen devices, it gonna work fine, and yup, it's responsive!
 
 */
+*{
+  box-sizing: border-box;
+}
 html {
   font-size: 62.5%;
 }
@@ -189,8 +192,14 @@ button:focus {
   grid-area: sidebar;
 }
 @media (max-width: 425px) {
-  .sidebar {
-    display: none;
+  .sidebar{
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    display: block;
+    z-index: 99999;
+    height: 100%;
+    padding: 0 3em;
   }
 }
 .sidebar__title {
@@ -311,6 +320,27 @@ button:focus {
     justify-content: flex-start;
   }
 }
+@media (min-width: 425px){
+  .main .filters .filters__btn:first-child {
+    display: none;
+  }
+  .sidebar #close_modal{
+    display: none;
+  }
+}
+.sidebar #close_modal{
+  position: absolute;
+  right: 2em;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  -webkit-box-shadow: inset -1px 3px 8px 5px #e6e6e6, 2px 5px 16px 0px #b3b3b3, 5px 5px 15px 5px rgb(0 0 0 / 0%);
+  box-shadow: inset -1px 3px 8px 5px #e6e6e6, 2px 5px 16px 0px #b3b3b3, 5px 5px 15px 5px rgb(0 0 0 / 0%);
+  border-radius: 25%;
+  padding-top: 7px;
+  text-align: center;
+}
+
 .filters__btn {
   background: transparent;
   font-size: 1.7rem;

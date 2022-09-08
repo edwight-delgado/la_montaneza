@@ -5,7 +5,7 @@ var vm = new Vue({
     selectedCategory: '',
     selectedSubCategory: '',
     searchQuery: null,
-    showModal: false,
+    Modal: true,
     items:[
       { id:1, title: 'carne de panela peito',img:'./img/carne-de-panela-peito-481.jpg',price:0, datetime:'May 2 2022',category:'vacuno',subcategory:'pulpa'}, 
       { id:2, title: 'Pulpa Pierna Deshuesada 21 kg',img:'./img/8552_pechuga_entera.png',price:100,datetime:'May 2 2022',category:'ave',subcategory:'pechuga' }, 
@@ -20,8 +20,8 @@ var vm = new Vue({
   },
  
   methods:  {
-      exampleFunction: function () {
-          console.log('This is an example function')
+      showModal: function(event){
+        this.Modal = event
       },
       updateCategory: function(event){
         this.selectedSubCategory = ''

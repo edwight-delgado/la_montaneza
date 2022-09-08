@@ -53,8 +53,12 @@
 
     <!-- SIDEBAR -->
     <!-- ------------------------------------------------- -->
-    <div class="sidebar">
-      <h2 class="sidebar__title">Productos ({{all_products}})</h2>
+    <div class="sidebar" v-show="Modal">
+      <h2 class="sidebar__title">Productos ({{all_products}}) 
+        <a  id="close_modal" href="#" v-on:click="showModal(false)">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
+      </h2>
 
       <div class="sidebar__category">
         <div class="sidebar__heading">Categoria <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
@@ -147,7 +151,7 @@
       <!-- FILTERS -->
       <!-- ------------------------------------------------- -->
       <div class="filters">
-        <button class="filters__btn">&nbsp;Filtro <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black">
+        <button class="filters__btn" v-on:click="showModal(true)" >&nbsp;Filtrar por <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black">
           <path d="M3 8L21 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M3 17H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M17 5L17 11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
